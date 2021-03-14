@@ -9,7 +9,21 @@ const app = Vue.createApp({
             variants: [
               { id: 2234, color: 'green', image: './assets/images/socks_green.jpg' },
               { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg' },
-            ]
+            ],
+            cart: 0
+        }
+    },
+    methods: {
+        addToCart() {
+            this.cart +=1
+        },
+        updateImage(variantImage) {
+            this.image = variantImage
+        },
+        remoFromCart() {
+            if(this.cart > 0) {
+                this.cart -=1
+            }
         }
     }
 })
